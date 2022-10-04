@@ -1,0 +1,31 @@
+quarkus:
+  openshift:
+    flavor: v3
+  kubernetes-client:
+    trust-certs: true
+    master-url: https://172.21.163.183:8443/
+    username: system
+    password: admin
+
+"%dev":
+  couchbase:
+    host: 127.0.0.1
+#    host: host.docker.internal
+    username: admin
+    password: admin123
+    bucketName: travel-sample
+  quarkus:
+    http:
+      port: 8080
+
+"%docker":
+  couchbase:
+    host: host.docker.internal
+    username: admin
+    password: admin123
+    bucketName: travel-sample
+  quarkus:
+    http:
+      port: 8082
+    swagger-ui:
+      always-include: true
